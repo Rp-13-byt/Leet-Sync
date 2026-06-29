@@ -394,7 +394,7 @@ function App() {
                 <h2 className="self-start text-lg font-bold border-b border-zinc-200 pb-2 w-full mb-4 dark:border-zinc-800">Difficulty Distribution</h2>
                 <ResponsiveContainer width="100%" height={280}>
                   <PieChart>
-                    <Pie data={difficultyData} dataKey="value" nameKey="name" outerRadius={90} label line>
+                    <Pie data={difficultyData} dataKey="value" nameKey="name" outerRadius={90} label>
                       {difficultyData.map((entry) => (
                         <Cell key={entry.name} fill={difficultyColors[entry.name as keyof typeof difficultyColors]} />
                       ))}
