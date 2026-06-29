@@ -22,8 +22,7 @@ class DatabaseManager:
     def _init(self) -> None:
         with self.connect() as db:
             # Core cache table
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS cache (
                     namespace TEXT,
                     key TEXT,
@@ -31,22 +30,18 @@ class DatabaseManager:
                     updated_at REAL,
                     PRIMARY KEY (namespace, key)
                 )
-                """
-            )
+                """)
             # Sync events table (for compatibility)
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS sync_events (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     event TEXT,
                     payload TEXT,
                     created_at REAL
                 )
-                """
-            )
+                """)
             # Problems table
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS problems (
                     id INTEGER PRIMARY KEY,
                     title TEXT NOT NULL,
@@ -58,11 +53,9 @@ class DatabaseManager:
                     constraints TEXT, -- JSON list of constraints
                     hints TEXT -- JSON list of hints
                 )
-                """
-            )
+                """)
             # Submissions table
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS submissions (
                     submission_id TEXT PRIMARY KEY,
                     problem_id INTEGER NOT NULL,
@@ -77,11 +70,9 @@ class DatabaseManager:
                     recommendations TEXT, -- JSON list of Recommendations
                     FOREIGN KEY (problem_id) REFERENCES problems (id)
                 )
-                """
-            )
+                """)
             # Documentation versions table
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS documentation_versions (
                     problem_id INTEGER PRIMARY KEY,
                     readme TEXT NOT NULL,
@@ -89,19 +80,16 @@ class DatabaseManager:
                     generated_at TEXT NOT NULL,
                     FOREIGN KEY (problem_id) REFERENCES problems (id)
                 )
-                """
-            )
+                """)
             # Sync history table
-            db.execute(
-                """
+            db.execute("""
                 CREATE TABLE IF NOT EXISTS sync_history (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     event TEXT NOT NULL,
                     payload TEXT NOT NULL, -- JSON payload
                     created_at REAL NOT NULL
                 )
-                """
-            )
+                """)
 
     # Cache Compatibility API
     def get(self, namespace: str, key: str) -> dict[str, Any] | None:
@@ -200,21 +188,36 @@ class DatabaseManager:
 
     def get_solved_problems(self) -> list[dict[str, Any]]:
         with self.connect() as db:
-            rows = db.execute(
-                """
+            rows = db.execute("""
                 SELECT p.id, p.title, p.title_slug, p.difficulty, p.tags, p.url, p.statement, p.constraints, p.hints,
                        s.submission_id, s.language, s.code, s.runtime, s.memory, s.submitted_at, s.status, s.analysis, s.review, s.recommendations
                 FROM problems p
                 JOIN submissions s ON p.id = s.problem_id
                 ORDER BY p.id ASC
-                """
-            ).fetchall()
+                """).fetchall()
 
         results: list[dict[str, Any]] = []
         for row in rows:
             (
-                p_id, p_title, p_slug, p_diff, p_tags, p_url, p_stmt, p_const, p_hints,
-                s_id, s_lang, s_code, s_runtime, s_memory, s_sub_at, s_status, s_anal, s_rev, s_recs
+                p_id,
+                p_title,
+                p_slug,
+                p_diff,
+                p_tags,
+                p_url,
+                p_stmt,
+                p_const,
+                p_hints,
+                s_id,
+                s_lang,
+                s_code,
+                s_runtime,
+                s_memory,
+                s_sub_at,
+                s_status,
+                s_anal,
+                s_rev,
+                s_recs,
             ) = row
 
             submitted_at = datetime.fromisoformat(s_sub_at)
@@ -222,22 +225,24 @@ class DatabaseManager:
             review = json.loads(s_rev) if s_rev else None
             recs = json.loads(s_recs) if s_recs else []
 
-            results.append({
-                "id": p_id,
-                "title": p_title,
-                "title_slug": p_slug,
-                "difficulty": p_diff,
-                "language": s_lang,
-                "runtime": s_runtime,
-                "memory": s_memory,
-                "submission_time": submitted_at.strftime("%H:%M:%S"),
-                "submission_date": submitted_at.date().isoformat(),
-                "submission_id": s_id,
-                "url": p_url,
-                "tags": json.loads(p_tags),
-                "hints": json.loads(p_hints),
-                "analysis": analysis,
-                "review": review,
-                "recommendations": recs,
-            })
+            results.append(
+                {
+                    "id": p_id,
+                    "title": p_title,
+                    "title_slug": p_slug,
+                    "difficulty": p_diff,
+                    "language": s_lang,
+                    "runtime": s_runtime,
+                    "memory": s_memory,
+                    "submission_time": submitted_at.strftime("%H:%M:%S"),
+                    "submission_date": submitted_at.date().isoformat(),
+                    "submission_id": s_id,
+                    "url": p_url,
+                    "tags": json.loads(p_tags),
+                    "hints": json.loads(p_hints),
+                    "analysis": analysis,
+                    "review": review,
+                    "recommendations": recs,
+                }
+            )
         return results

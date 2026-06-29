@@ -78,7 +78,9 @@ class SyncEngine:
                 with self.metrics.timer("generate_documentation"):
                     documentation = self.docs.generate(solved)
                 self.cache.save_solved_problem(solved)
-                self.cache.save_documentation(problem.id, documentation.readme, documentation.notes)
+                self.cache.save_documentation(
+                    problem.id, documentation.readme, documentation.notes
+                )
                 changed_paths = self.portfolio.upsert_problem(solved, documentation)
                 if not changed_paths:
                     self.cache.event("sync_unchanged", {"submission_id": submission_id})

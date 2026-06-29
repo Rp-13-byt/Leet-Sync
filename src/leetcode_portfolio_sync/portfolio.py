@@ -77,6 +77,7 @@ class PortfolioRepository:
 
     def regenerate_indexes(self) -> list[Path]:
         from .cache import SQLiteCache
+
         db = SQLiteCache(self.config.cache.sqlite_path)
         items = db.get_solved_problems()
         if not items:

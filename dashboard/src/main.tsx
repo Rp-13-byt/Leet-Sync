@@ -5,11 +5,8 @@ import {
   Award,
   BookOpen,
   CheckCircle2,
-  Clock,
   Code2,
   Cpu,
-  Database,
-  GitCommit,
   Layers,
   Moon,
   RefreshCw,
@@ -42,6 +39,7 @@ type Problem = {
   submission_date: string;
   url: string;
   tags: string[];
+  code?: string;
   analysis?: {
     time_complexity: string;
     space_complexity: string;
@@ -326,7 +324,7 @@ function App() {
                                     <pre className="max-h-[380px] overflow-auto rounded-lg border border-zinc-200 bg-zinc-900 p-4 font-mono text-xs text-zinc-100 dark:border-zinc-800">
                                       <code>{/* Solution code will be displayed here dynamically, if loaded */}
                                       {/* Note: since this UI displays stored records from DB, we fall back if code isn't fully detailed */}
-                                      {("code" in problem) ? (problem as any).code : "# Solution code is stored in solution file."}</code>
+                                      {problem.code ? problem.code : "# Solution code is stored in solution file."}</code>
                                     </pre>
                                   </div>
 
