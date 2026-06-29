@@ -20,12 +20,12 @@
 
   /* Sleek Icon Buttons with subtle borders & hover animations */
   .icon-button {
-    @apply grid h-10 w-10 place-items-center rounded-lg border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-zinc-900 active:scale-95 dark:border-zinc-850 dark:bg-zinc-900 dark:text-zinc-450 dark:hover:bg-zinc-800 dark:hover:text-zinc-100;
+    @apply grid h-10 w-10 place-items-center rounded-lg border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-zinc-900 active:scale-95 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100;
   }
 
   /* Search Input styles */
   .search {
-    @apply flex h-10 items-center gap-2 rounded-lg border border-zinc-250 bg-white px-3 shadow-sm transition-all focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 dark:border-zinc-750 dark:bg-zinc-950;
+    @apply flex h-10 items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 shadow-sm transition-all focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 dark:border-zinc-700 dark:bg-zinc-950;
   }
 
   .search input {
@@ -34,7 +34,7 @@
 
   /* HTML Select overrides */
   select {
-    @apply h-10 rounded-lg border border-zinc-250 bg-white px-3 text-sm shadow-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 dark:border-zinc-750 dark:bg-zinc-950;
+    @apply h-10 rounded-lg border border-zinc-200 bg-white px-3 text-sm shadow-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 dark:border-zinc-700 dark:bg-zinc-950;
   }
 
   /* Table Customizations */
@@ -47,11 +47,11 @@
   }
 
   td {
-    @apply border-b border-zinc-100 px-6 py-4 transition-colors dark:border-zinc-850;
+    @apply border-b border-zinc-100 px-6 py-4 transition-colors dark:border-zinc-800;
   }
 
   a {
-    @apply font-semibold text-emerald-600 hover:text-emerald-500 transition-colors dark:text-emerald-450 dark:hover:text-emerald-400;
+    @apply font-semibold text-emerald-600 hover:text-emerald-500 transition-colors dark:text-emerald-400 dark:hover:text-emerald-400;
   }
 
   /* Interactive Badges */
@@ -60,15 +60,15 @@
   }
 
   .badge.easy {
-    @apply bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-350;
+    @apply bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300;
   }
 
   .badge.medium {
-    @apply bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-350;
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300;
   }
 
   .badge.hard {
-    @apply bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-350;
+    @apply bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300;
   }
 
   /* Activity heatmap styling */
@@ -85,7 +85,7 @@
   }
 
   .heat-2 {
-    @apply bg-emerald-250 border-emerald-300 dark:bg-emerald-800/60 dark:border-emerald-800;
+    @apply bg-emerald-200 border-emerald-300 dark:bg-emerald-800/60 dark:border-emerald-800;
   }
 
   .heat-3 {
