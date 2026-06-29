@@ -1,0 +1,32 @@
+github:
+  owner: your-github-user
+  repository: LeetCode-Portfolio
+  default_branch: main
+  token_env: GITHUB_TOKEN
+  oauth_client_id_env: GITHUB_OAUTH_CLIENT_ID
+  auto_create: true
+leetcode:
+  session_env: LEETCODE_SESSION
+  csrf_env: LEETCODE_CSRF_TOKEN
+  graphql_url: https://leetcode.com/graphql
+  base_url: https://leetcode.com
+  poll_seconds: 300
+documentation:
+  provider: openai
+  model: gpt-4.1-mini
+  temperature: 0.1
+  require_llm: false
+repository:
+  local_path: LeetCode-Portfolio
+  commit_style: "feat(leetcode): solve #{id:04d} {title} ({language})"
+  auto_push: true
+  theme: system
+cache:
+  sqlite_path: .leetcode-portfolio-sync/cache.sqlite3
+logging:
+  level: INFO
+  json_logs: true
+platforms:
+  enabled:
+    - leetcode
+dashboard_enabled: true

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-label="Sync demo">
+  <rect width="960" height="320" fill="#17211b"/>
+  <rect x="32" y="32" width="896" height="256" rx="8" fill="#0f1712" stroke="#33413a"/>
+  <text x="64" y="78" font-family="Consolas, monospace" font-size="18" fill="#19a974">$ leetcode-portfolio-sync sync-recent raj --limit 3</text>
+  <text x="64" y="122" font-family="Consolas, monospace" font-size="16" fill="#d7e4dc">{"event":"sync_completed","submission_id":"123","changed":true,"pushed":true}</text>
+  <text x="64" y="158" font-family="Consolas, monospace" font-size="16" fill="#d7e4dc">Analyzed Python AST: Dynamic Programming, Hash Map, O(n)</text>
+  <text x="64" y="194" font-family="Consolas, monospace" font-size="16" fill="#d7e4dc">Generated README.md, notes.md, metadata.json, solution.py</text>
+  <text x="64" y="230" font-family="Consolas, monospace" font-size="16" fill="#e9c46a">feat(leetcode): solve #0238 Product of Array Except Self (Python)</text>
+  <text x="64" y="266" font-family="Consolas, monospace" font-size="16" fill="#19a974">Push complete. Portfolio dashboard updated.</text>
+</svg>

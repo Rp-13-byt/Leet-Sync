@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - ./LeetCode-Portfolio:/app/LeetCode-Portfolio
+    ports:
+      - "8000:8000"
+  dashboard:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_API_BASE: http://localhost:8000
+    volumes:
+      - ./dashboard:/app
+    ports:
+      - "5173:5173"

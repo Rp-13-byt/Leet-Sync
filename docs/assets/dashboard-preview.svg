@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Dashboard preview">
+  <rect width="960" height="540" fill="#f4f6f5"/>
+  <rect x="32" y="32" width="896" height="476" rx="8" fill="#ffffff" stroke="#d8dedb"/>
+  <text x="64" y="82" font-family="Arial" font-size="28" font-weight="700" fill="#17211b">LeetCode Portfolio Sync</text>
+  <text x="64" y="112" font-family="Arial" font-size="14" fill="#66736c">Solved problems, implementation analysis, and sync health</text>
+  <g fill="#ffffff" stroke="#d8dedb">
+    <rect x="64" y="148" width="150" height="88" rx="8"/>
+    <rect x="230" y="148" width="150" height="88" rx="8"/>
+    <rect x="396" y="148" width="150" height="88" rx="8"/>
+    <rect x="562" y="148" width="150" height="88" rx="8"/>
+    <rect x="728" y="148" width="150" height="88" rx="8"/>
+  </g>
+  <g font-family="Arial" fill="#17211b">
+    <text x="86" y="183" font-size="13">Solved</text><text x="86" y="215" font-size="32" font-weight="700">128</text>
+    <text x="252" y="183" font-size="13">Easy</text><text x="252" y="215" font-size="32" font-weight="700">54</text>
+    <text x="418" y="183" font-size="13">Medium</text><text x="418" y="215" font-size="32" font-weight="700">61</text>
+    <text x="584" y="183" font-size="13">Hard</text><text x="584" y="215" font-size="32" font-weight="700">13</text>
+    <text x="750" y="183" font-size="13">Retries</text><text x="750" y="215" font-size="32" font-weight="700">0</text>
+  </g>
+  <rect x="64" y="268" width="400" height="190" rx="8" fill="#ffffff" stroke="#d8dedb"/>
+  <rect x="496" y="268" width="382" height="190" rx="8" fill="#ffffff" stroke="#d8dedb"/>
+  <text x="88" y="304" font-family="Arial" font-size="18" font-weight="700" fill="#17211b">Topic Analytics</text>
+  <text x="520" y="304" font-family="Arial" font-size="18" font-weight="700" fill="#17211b">Submission Heatmap</text>
+  <g fill="#19a974">
+    <rect x="96" y="340" width="44" height="84" rx="4"/>
+    <rect x="158" y="370" width="44" height="54" rx="4"/>
+    <rect x="220" y="320" width="44" height="104" rx="4"/>
+    <rect x="282" y="388" width="44" height="36" rx="4"/>
+    <rect x="344" y="354" width="44" height="70" rx="4"/>
+  </g>
+  <g>
+    <rect x="528" y="336" width="26" height="26" rx="4" fill="#d1fae5"/>
+    <rect x="562" y="336" width="26" height="26" rx="4" fill="#6ee7b7"/>
+    <rect x="596" y="336" width="26" height="26" rx="4" fill="#10b981"/>
+    <rect x="630" y="336" width="26" height="26" rx="4" fill="#047857"/>
+    <rect x="664" y="336" width="26" height="26" rx="4" fill="#d1fae5"/>
+    <rect x="698" y="336" width="26" height="26" rx="4" fill="#6ee7b7"/>
+    <rect x="732" y="336" width="26" height="26" rx="4" fill="#10b981"/>
+    <rect x="528" y="370" width="26" height="26" rx="4" fill="#f1f5f9"/>
+    <rect x="562" y="370" width="26" height="26" rx="4" fill="#d1fae5"/>
+    <rect x="596" y="370" width="26" height="26" rx="4" fill="#047857"/>
+    <rect x="630" y="370" width="26" height="26" rx="4" fill="#10b981"/>
+    <rect x="664" y="370" width="26" height="26" rx="4" fill="#6ee7b7"/>
+    <rect x="698" y="370" width="26" height="26" rx="4" fill="#f1f5f9"/>
+    <rect x="732" y="370" width="26" height="26" rx="4" fill="#d1fae5"/>
+  </g>
+</svg>
